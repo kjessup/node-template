@@ -1,0 +1,59 @@
+<%- include('partials/header', { }) %>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <body hx-ext="ws" ws-connect="/ws">
+        <main class="container">
+            <div class="row p-2">
+                <div class="col"> </div>
+                <div class="col-4">
+                    <form action="/logout" method="post">
+                        <span>
+                            <%= user.name || user.username %>
+                        </span> <button class="logout btn btn-outline-secondary" type="submit">Sign out</button>
+                        <!-- input type="hidden" name="_csrf" value=" " -->
+                    </form>
+                </div>
+            </div>
+            <form class="container" ws-send hx-target="#user-list">
+                <div class="row">
+                    <label class="col text-secondary p-1" for="username">Email</label>
+                </div>
+                <div class="row">
+                    <input id="username" type="text" class="col form-control" name="username"
+                        placeholder="Enter username" required>
+                    <div class="col-9"> </div>
+                </div>
+                <div class="row">
+                    <label class="col text-secondary p-1" for="password">Password</label>
+                </div>
+                <div class="row">
+                    <input id="password" type="text" class="col form-control" name="password" placeholder="Password"
+                        required>
+                    <div class="col-9"> </div>
+                </div>
+                <div class="row pt-2">
+                    <button type="submit" name="createuser" value="true" class="col-2 btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <div class="row">
+                <table>
+                    <%- include('partials/admin-user-list', { user, users }) %>
+                </table>
+            </div>
+        </main>
+        <div id="modals-here" class="modal modal-blur fade" style="display: none" aria-hidden="false" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content p-2"></div>
+            </div>
+        </div>
+        <div id="error-modal" class="modal modal-blur fade" style="display: none" aria-hidden="false" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content p-2"></div>
+            </div>
+        </div>
+    </body>
+    <%- include('partials/footer') %>

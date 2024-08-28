@@ -1,0 +1,51 @@
+{
+  "name": "node-template",
+  "version": "0.0.1",
+  "description": "Description",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node -r dotenv/config ./dist/index.js",
+    "tsc:watch": "tsc --watch",
+    "tsc:build": "tsc",
+    "sass:watch": "sass --watch --source-map --embed-sources --load-path=node_modules src/sass:public/css",
+    "sass": "sass --source-map --embed-sources --no-error-css --load-path=node_modules src/sass:public/css",
+    "admin-create": "node -r dotenv/config ./dist/admin-create.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/connect-ensure-login": "^0.1.9",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/cors": "^2.8.17",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/minimist": "^1.2.5",
+    "@types/multer": "^1.4.12",
+    "@types/nodemailer": "^6.4.15",
+    "@types/passport": "^1.0.16",
+    "@types/passport-local": "^1.0.38",
+    "@types/sass": "^1.45.0",
+    "sass": "^1.77.8",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.3",
+    "connect-ensure-login": "^0.1.1",
+    "connect-pg-simple": "^9.0.1",
+    "cors": "^2.8.5",
+    "crud": "github:kjessup/node-crud#main",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "minimist": "^1.2.8",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.14",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg-node-crud": "github:kjessup/pg-node-crud#main"
+  }
+}

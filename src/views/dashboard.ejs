@@ -1,0 +1,46 @@
+<%- include('partials/header', { }) %>
+
+<script src="/js/main.js"></script>
+
+  <body class="dashboard">
+    <header class="hstack gap-3m">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle d-block d-md-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-menu-button-wide"></i>
+        </button>
+        <div id="right-dropdown-menu" class="dropdown-menu">
+        </div>
+      </div>
+      <div class="h3 px-4 m-0 hstack"><div id="ws-status" class=""></div>&nbsp;node-template</div>
+      <div class="px-4 ms-auto"></div>
+      <form class="px-4" method="POST" action="/logout">
+        <button type="submit" class="btn btn-primary">Sign out</button>
+      </form>
+    </header>
+    
+    <main class="container">
+      <div class="row p-2">
+        <div class="m-2 col-md">
+          ...
+        </div>
+      </div>
+    </main>
+    <div id="modals-here" class="modal modal-blur fade" style="display: none" aria-hidden="false" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content p-2"></div>
+      </div>
+    </div>
+    <div id="error-modal" class="modal modal-blur fade" style="display: none" aria-hidden="false" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content p-2">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const dashboardModal = new bootstrap.Modal('#modals-here');
+    </script>
+  </body>
+  <%- include('partials/footer') %>

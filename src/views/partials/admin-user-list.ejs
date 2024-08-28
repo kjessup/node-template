@@ -1,0 +1,5 @@
+<tbody id="user-list">
+    <% for(const user of users) { %>
+        <%- include('admin-user-list-item', { user, users }) %>
+    <% } %>
+</tbody>

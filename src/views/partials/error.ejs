@@ -1,0 +1,7 @@
+<div id="error-modal" hx-swap-oob="innerHTML">
+    <div hx-on::load="showError()" class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="alert alert-danger m-0" role="alert"><%= `${error}` %></div>
+        </div>
+    </div>
+</div>
